@@ -142,10 +142,10 @@ class ProjectController extends Controller
         //richiedo validazione con le nuove regole
         $request->validate($newRules);
         //cancellazione file dal db se viene cambiata l'immagine
-        // if ($request->hasFile('preview')) {
-        //     Storage::delete($project->preview);
-        //     $data['preview'] =  Storage::put('img/uploads', $data['preview']);
-        // };
+        if ($request->hasFile('preview')) {
+            Storage::delete($project->preview);
+            $data['preview'] =  Storage::put('img/uploads', $data['preview']);
+        };
         $project->update($data);
         $project->technologies()->sync($data['technologies'] ?? []);
 
