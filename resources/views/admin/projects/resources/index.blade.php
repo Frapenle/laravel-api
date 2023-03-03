@@ -156,7 +156,7 @@
                             <tr>
                                 <th scope="row"> {{$project->id}} </th>
                                 <td class="text-truncate" style="max-width: 100px">
-                                    <img src="{{(Storage::exists($project->preview)) ? asset('storage/' . $project->preview) : asset('placeholders/' . $project->preview)}}" alt="{{$project->name}} preview image" class="" width="80">
+                                    <img src="{{(Storage::exists($project->preview)) ? asset('storage/' . $project->preview) : asset('storage/img/uploads/' . $project->preview)}}" alt="{{$project->name}} preview image" class="" width="80">
                                 </td>
                                 <td style="min-width: 100px"> {{$project->name}} </td>
                                 <td class="text-truncate" style="max-width: 200px"> {{$project->description}} </td>

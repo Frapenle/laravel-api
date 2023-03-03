@@ -83,7 +83,7 @@ class ProjectController extends Controller
         if ($request->hasFile('preview')) {
             $newProject->preview = Storage::put('img/uploads', $data['preview']);
         } else {
-            $newProject->preview = 'img/placeholder-300x300';
+            $newProject->preview = 'img/uploads/placeholder-300x300';
         }
         $newProject->save();
         // controllo se checkbox selezionato 
